@@ -1,4 +1,5 @@
 """
+Proportional
 O(n): Here the code is proportional to the value passed
 
 Some time for code that have a big of O(2n)
