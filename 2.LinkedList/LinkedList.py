@@ -86,7 +86,21 @@ class LinkedList:
             if self.length == 0:
                 self.tail =  None 
         return temp.value
-
+    # Get List Method
+    def get(self, index):
+        if index <0 or index >= self.length:
+            return None
+        temp =  self.head
+        for  _ in range(index):
+            temp =  temp.next
+        return temp  
+    # Set value
+    def setvalue(self, index, value):
+        temp =  self.get(index)
+        if temp:
+            temp.value =  value
+            return True
+        return False
 
     
 myLinkedList =  LinkedList(4)
@@ -94,5 +108,9 @@ myLinkedList =  LinkedList(4)
 myLinkedList.append(5)
 myLinkedList.append(6)
 myLinkedList.prepend(7)
-myLinkedList.Pop()
-print(f"Linked List after poping: \n",LinkedList.print_list(myLinkedList))
+myLinkedList.append(8)
+myLinkedList.append(9)
+myLinkedList.get(4)
+myLinkedList.setvalue(1,2)
+
+
