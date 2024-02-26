@@ -112,8 +112,31 @@ class LinkedList:
         temp.next =  new_node
         self.length +=  1
         return True
+    #Removing from middle
+    def remove(self, index):
+        if index < 0 or index >= self.length:
+            return None
+        if index == 0:
+            return self.PopFirst()
+        if index == self.length-1:
+            return self.Pop()
+        prev =  self.get(index-1)
+        temp =  prev.next
+        prev.next =  temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
     
-    
+    #reversing the List
+    def reverse(self):
+        temp =  self.head
+        self.head =  self.tail
+        self.tail =  temp
+        after = temp.next
+        before =  None
+        
+
+
 myLinkedList =  LinkedList(4)
 
 myLinkedList.append(5)
@@ -122,6 +145,8 @@ myLinkedList.prepend(7)
 myLinkedList.append(8)
 myLinkedList.append(9)
 myLinkedList.get(4)
+myLinkedList.Insert(2,40)
 myLinkedList.setvalue(1,2)
+myLinkedList.Insert(1,2)
 
 
