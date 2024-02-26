@@ -134,7 +134,12 @@ class LinkedList:
         self.tail =  temp
         after = temp.next
         before =  None
-        
+        for _ in range(self.length):
+            after =  temp.next
+            temp.next =  before
+            before =  temp
+            temp =  after
+
 
 
 myLinkedList =  LinkedList(4)
@@ -148,5 +153,8 @@ myLinkedList.get(4)
 myLinkedList.Insert(2,40)
 myLinkedList.setvalue(1,2)
 myLinkedList.Insert(1,2)
+myLinkedList.print_list()
+myLinkedList.reverse()
+myLinkedList.print_list()
 
 
